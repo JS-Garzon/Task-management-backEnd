@@ -68,7 +68,6 @@ export class UsersController {
     @Body() payload: UpdateUserDto,
     @UploadedFile() file: Express.Multer.File,
   ) {
-    console.log(file);
     return this.usersService.update(id, payload, file);
   }
 

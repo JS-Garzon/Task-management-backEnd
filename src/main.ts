@@ -3,6 +3,8 @@ import { AppModule } from './app.module';
 import * as express from 'express';
 import * as path from 'path';
 import * as bodyParser from 'body-parser';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

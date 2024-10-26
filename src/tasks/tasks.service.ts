@@ -63,7 +63,6 @@ export class TasksService {
 
   private isAdmin(userRole: string): boolean {
     const isAdmin = userRole.includes('admin');
-    console.log(isAdmin);
     return isAdmin;
   }
 }

@@ -38,7 +38,6 @@ export class UsersService {
   ): Promise<User> {
     if (file) {
       const photoPath = path.join('uploads', 'profile_pics');
-      console.log(photoPath);
       // Eliminar la foto anterior si existe
       const existingUser = await this.userModel.findById(id).exec();
       if (existingUser && existingUser.photo) {
@@ -50,7 +49,6 @@ export class UsersService {
 
       // Guardar la nueva imagen
       const filePath = path.join(photoPath, file.filename);
-      console.log(filePath);
 
       const buffer = await fs.promises.readFile(file.path);
       fs.writeFileSync(filePath, buffer);
