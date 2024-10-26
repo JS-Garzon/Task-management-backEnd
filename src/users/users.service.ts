@@ -17,8 +17,14 @@ export class UsersService {
   }
 
   async findOne(id: string) {
-    return await this.userModel.findById(id).exec();
+    console.log(`Buscando usuario con ID: ${id}`);
+    const user = await this.userModel.findById(id).exec();
+    if (!user) {
+      throw new NotFoundException(`User with ID '${id}' not found`);
+    }
+    return user;
   }
+
   async findOneByEmail(email: string) {
     return await this.userModel.findOne({ email: email }).exec();
   }
