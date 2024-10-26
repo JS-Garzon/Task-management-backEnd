@@ -11,7 +11,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:4200',
-      'https://task-management-production-8ab1.up.railway.app/',
+      'https://task-management-production-8ab1.up.railway.app',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
